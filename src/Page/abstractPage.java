@@ -21,10 +21,11 @@ public abstract class abstractPage {
 		
 	}
 	//log
-	public void dealPresent(WebElement d,RemoteWebDriver driver){
+	public Boolean dealPresent(WebElement d,RemoteWebDriver driver){
 		while(!isByPresent(d)){
 			driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		}
+		return true;
 		
 	}
 

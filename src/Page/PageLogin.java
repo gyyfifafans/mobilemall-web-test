@@ -10,8 +10,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import junit.framework.Assert;
 import module.ScreenShot;
+import util.CleanProcess;
+import org.apache.log4j.*;
+
 
 public class PageLogin extends abstractPage{
+	public Logger log = Logger.getLogger(PageLogin.class);
 	private By mobileNum_loc;
 	private By password_loc;
 	private By loginButton_loc;
@@ -53,8 +57,12 @@ public class PageLogin extends abstractPage{
 		WebElement e2 = driver.findElement(p.get("password"));
 		WebElement e3 = driver.findElement(p.get("login"));
 		p.dealPresent(e1, driver);
+		p.log.info("用户名输出框正常显示");
 		p.dealPresent(e2, driver);
+		p.log.info("密码输入框正常显示");
 		p.dealPresent(e3, driver);
+		p.log.info("登录按钮正常显示");
+		
 		e1.clear();
 		e2.clear();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -69,6 +77,7 @@ public class PageLogin extends abstractPage{
 		ScreenShot.takeScreenShot(driver);
 		driver.close();
 		System.out.println("close");
+		CleanProcess.main(null);
 	
 	}
 	public void Login(RemoteWebDriver driver,String username,String password){
