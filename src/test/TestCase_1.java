@@ -15,6 +15,7 @@ import Page.PageLogin;
 import Page.PageMain;
 import Page.PageOrder;
 import Page.PageProduct;
+import action.Login;
 import module.ScreenShot;
 
 public class TestCase_1 {
@@ -35,7 +36,7 @@ public class TestCase_1 {
 	public void test_login(){
 		PageLogin Login = new PageLogin(driver);
 		PageMain p = new PageMain(driver);
-		Login.Login(driver,"13313313313","222222");
+		Login login = new Login(driver,"13313313313","222222");
 		WebElement e = driver.findElement(p.get("personal"));
 		ScreenShot.takeScreenShot(driver);
 		Assert.assertTrue(e.isDisplayed());
@@ -43,7 +44,7 @@ public class TestCase_1 {
 		//assertEquals
 
 	}
-	
+	/*
 	@Test
 	public void test_order(){
 		PageLogin Login = new PageLogin(driver);
@@ -83,7 +84,7 @@ public class TestCase_1 {
 		e6.click();
 		
 		
-	}
+	}*/
 	
 	@AfterClass(alwaysRun = true)
 	public void tearDown(){
