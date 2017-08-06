@@ -1,16 +1,32 @@
-<project name="mytest" basedir="." >
-    <property name="lib.dir" value="lib" />
-    <path id="test.classpath" >
-         <!-- adding the saxon jar to your classpath -->
-        <fileset dir="${lib.dir}" includes="*.jar" />
+<?xml version="1.0"?>
+<project name="mobilemall-web-test" default="run" basedir=".">
+    <echo  message="import libs" />
+    <path id="run.classpath">
+        <fileset dir="${basedir}/libs">
+        	<include name="*.jar"/>
+
+        </fileset>
+
     </path>
-    <target name="transform" >
-        <!-- 需要根据自己的环境进行配置（将E:/workspace/testNG/替换成你自己project的目录） -->
-        <xslt in="E:/workspace/mytest/test-output/testng-results.xml" style="E:/workspace/testNG/test-output/testng-results.xsl"
-  out="E:/workspace/testNG/test-output/index1.html" >
-             <!-- 需要根据自己的环境进行配置（将E:/workspace/testNG/替换成你自己project的目录） -->
-            <param name="testNgXslt.outputDir" expression="E:/workspace/mytest/test-output/" />
-            <classpath refid="test.classpath" />
-        </xslt>
+    <taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="run.classpath" />
+    <target name="clean">
+        <delete dir="build"/>
     </target>
-</project> 
+    <target name="compile" depends="clean">
+        <echo message="mkdir"/>
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes" debug="on" encoding="UTF-8">
+            <classpath refid="run.classpath"/>
+        </javac>
+    </target>
+    <path id="runpath"> 
+         <path refid="run.classpath"/> 
+         <pathelement location="build/classes"/> 
+       </path> 
+    <target name="run" depends="compile">
+        <testng  classpathref="runpath"  outputDir="test-output">
+            <xmlfileset dir="${basedir}" includes="testng.xml"/>
+            <jvmarg value="-ea" />
+        </testng>
+    </target>
+</project>
