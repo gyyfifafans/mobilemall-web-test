@@ -17,6 +17,7 @@ import Page.PageOrder;
 import Page.PageProduct;
 import action.Login;
 import module.ScreenShot;
+import util.CleanProcess;
 
 public class TestCase_1 {
 	DesiredCapabilities caps= new DesiredCapabilities();
@@ -90,6 +91,7 @@ public class TestCase_1 {
 	public void tearDown(){
 		driver.close();
 		System.out.println("finished");
+		CleanProcess.main(null);
 	}
 
 	

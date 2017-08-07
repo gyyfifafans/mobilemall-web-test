@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+    <classes>
+    <!-- 下面这个name是你自己包名字然后.你的类名 -->
+      <class name="test.TestCase_1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -13,7 +13,12 @@ public class Login {
 	public Login(RemoteWebDriver driver,String username,String password){
 		PageLogin p = new PageLogin(driver);
 		PageMain p1 = new PageMain(driver);
-		driver.get("http://mobiletest.ehaier.com:58082/mobile/member/toMemberLogin.html");
+		try{
+		    driver.get("http://mobiletest.ehaier.com:58082/mobile/member/toMemberLogin.html");
+		}
+		catch (Exception e){
+			System.out.println("Error：网络异常");
+		}
 		WebElement e1 = driver.findElement(p.get("mobileNum"));
 		WebElement e2 = driver.findElement(p.get("password"));
 		WebElement e3 = driver.findElement(p.get("login"));
