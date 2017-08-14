@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <project name="mobilemall-web-test" default="run" basedir=".">
     <echo  message="import libs" />
     <path id="run.classpath">

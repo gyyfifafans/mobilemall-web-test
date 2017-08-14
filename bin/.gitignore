@@ -1,2 +1,13 @@
 /testng.bak.xml
 /test/
+/Page/
+/module/
+/android_config.properties
+/ios_config.properties
+/WapPage/
+/action/
+/PcPage/
+/AppPage/
+/PCPage/
+/util/
+/log/

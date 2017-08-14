@@ -56,9 +56,7 @@ COOKIE_SESSIONID = COOKIE_DOMAIN + "_ehaier_sessionid"
 2.优惠券领个不同金额的选择看如何提交
 3.选择地址
 4.search and orderlist and personal and pay  Page
-5.httpres
-6.logger
 7.提交订单单独类，处理不同活动商品/不同种类商品 看源码
 
 8.excel按照页面分开，包含动作和页面数据
-9.build.xml有问题
+9.增加了wap，pc，app页面包，增加了driver封装，增加了ios、android的配置文件

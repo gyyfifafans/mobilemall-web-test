@@ -11,10 +11,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import Page.PageLogin;
-import Page.PageMain;
-import Page.PageOrder;
-import Page.PageProduct;
+import WapPage.PageLogin;
+import WapPage.PageMain;
+import WapPage.PageOrder;
+import WapPage.PageProduct;
 import action.Login;
 import module.ScreenShot;
 import util.CleanProcess;

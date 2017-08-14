@@ -5,8 +5,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import Page.PageLogin;
-import Page.PageMain;
+import WapPage.PageLogin;
+import WapPage.PageMain;
 
 public class Login {
 	

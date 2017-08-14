@@ -1,4 +1,8 @@
 package log;
+//
+//重写分析日志
+
+
 
 import java.io.FileInputStream;
 import java.io.IOException;
